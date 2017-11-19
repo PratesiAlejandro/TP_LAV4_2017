@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Juego } from '../clases/juego';
+import { Juego } from '../clases/Juego';
 import { JuegoAdivina } from '../clases/juego-adivina';
+
 @Injectable()
 export class JuegoServiceService {
 
   constructor() { }
 
-  public listar(): Array<Juego> {
+
+public listar(): Array<Juego> {
 
     let miArray: Array<Juego> = new Array<Juego>();
 

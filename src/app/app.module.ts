@@ -1,77 +1,73 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
-import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
+import { RouterModule,Route } from '@angular/router';
+
 import { LoginComponent } from './componentes/login/login.component';
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-// import { AccordionModule } from 'ngx-bootstrap';
-// agrego las clases para utilizar ruteo
-import { RouterModule, Routes } from '@angular/router';
-
-import { ErrorComponent } from './componentes/error/error.component';
-import { PrincipalComponent } from './componentes/principal/principal.component';
-import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
-import { MenuComponent } from './componentes/menu/menu.component';
-import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
-import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
-import { RuteandoModule } from './ruteando/ruteando.module';
-import { ListadoComponent } from './componentes/listado/listado.component';
-// declaro donde quiero que se dirija
-/*
-const MiRuteo = [{path: 'error' , component: ErrorComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Principal' , component: PrincipalComponent , pathMatch: 'full'},
-{path: 'Adivina' , component: AdivinaElNumeroComponent},
-{path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-{path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-{path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-{path: '' , component: LoginComponent , pathMatch: 'full'},
-
-{path: '**' , component: ErrorComponent} ];
-*/
-
-import { JuegoServiceService } from './servicios/juego-service.service';
-import { ListadosComponent } from './componentes/listados/listados.component';
 import { JuegosComponent } from './componentes/juegos/juegos.component';
-import { RegistroComponent } from './componentes/registro/registro.component';
-import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
-import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
-import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
-import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
+import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
+import { APP_ROUTING } from './app.routesModule';
+import { HomeComponent } from './componentes/home/home.component';
+import { CrearCuentaComponent } from './componentes/crear-cuenta/crear-cuenta.component';
+import { QuiensoyComponent } from './componentes/quiensoy/quiensoy.component';
+import { AyudaComponent } from './componentes/ayuda/ayuda.component';
+import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
+import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
+import { MenuEncabezadoComponent } from './componentes/menu-encabezado/menu-encabezado.component';
+import { JuegoServiceService } from './servicios/juego-service.service';
+
+import { MiJuegoComponent } from './componentes/mi-juego/mi-juego.component';
+import { ListadoComponent } from './componentes/listado/listado.component';
+import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+//import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatProgressSpinnerModule, MatToolbarModule} from '@angular/material';
+import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
+
+export const EXAMPLE_COMPONENTS = {
+  'autocomplete-display': {
+    title: 'Display value autocomplete',
+    component: HomeComponent,
+    additionalFiles: null,
+    selectorName: null
+  },
+};
+
+
 
 @NgModule({
   declarations: [
+    
     AppComponent,
-    AdivinaElNumeroComponent,
-    ListadoDeResultadosComponent,
-    ErrorComponent,
-    PrincipalComponent,
     LoginComponent,
-    AgilidadAritmeticaComponent,
-    MenuComponent,
-    AdivinaMasListadoComponent,
-    AgilidadMasListadoComponent,
-    ListadoComponent,
-    ListadosComponent,
     JuegosComponent,
-    RegistroComponent,
-    MenuCardComponent,
-    CabeceraComponent,
-    QuienSoyComponent,
-    AnagramaComponent
+    PaginaNoEncontradaComponent,
+    HomeComponent,
+    CrearCuentaComponent,
+    QuiensoyComponent,
+    AyudaComponent,
+    AdivinaElNumeroComponent,
+    AgilidadAritmeticaComponent,
+    MenuEncabezadoComponent,
+    MiJuegoComponent,
+    ListadoComponent,
+    AnagramaComponent,
+    ListadoDeResultadosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
-
-    // NgbModule.forRoot(MiRuteo),
-    // importo el ruteo
-    // RouterModule.forRoot(MiRuteo)
+    HttpModule,
+     MatButtonModule,//Material
+    MatCheckboxModule,//Material
+    MatProgressSpinnerModule, //spinner Material
+    MatToolbarModule, //toolbar Material
+    APP_ROUTING
   ],
+
+  
   providers: [ JuegoServiceService],
   bootstrap: [AppComponent]
 })

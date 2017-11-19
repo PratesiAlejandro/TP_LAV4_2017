@@ -1,6 +1,5 @@
-
-import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAdivina } from '../../clases/juego-adivina'
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { JuegoAdivina } from '../../clases/juego-adivina'; 
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -8,9 +7,9 @@ import { JuegoAdivina } from '../../clases/juego-adivina'
   styleUrls: ['./adivina-el-numero.component.css']
 })
 export class AdivinaElNumeroComponent implements OnInit {
- @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
+@Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
 
-  nuevoJuego: JuegoAdivina;
+   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
   ocultarVerificar:boolean;
