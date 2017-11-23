@@ -22,9 +22,10 @@ import { MiJuegoComponent } from './componentes/mi-juego/mi-juego.component';
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 //import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatProgressSpinnerModule, MatToolbarModule} from '@angular/material';
+
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
+import { BestScoreManager } from './app.storage.service';
+
 
 export const EXAMPLE_COMPONENTS = {
   'autocomplete-display': {
@@ -55,20 +56,18 @@ export const EXAMPLE_COMPONENTS = {
     ListadoComponent,
     AnagramaComponent,
     ListadoDeResultadosComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-     MatButtonModule,//Material
-    MatCheckboxModule,//Material
-    MatProgressSpinnerModule, //spinner Material
-    MatToolbarModule, //toolbar Material
+   
     APP_ROUTING
   ],
 
   
-  providers: [ JuegoServiceService],
+  providers: [ JuegoServiceService,BestScoreManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
