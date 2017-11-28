@@ -25,6 +25,11 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { BestScoreManager } from './app.storage.service';
+import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
+import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { PiedraPapelTijeraListadoComponent } from './componentes/piedra-papel-tijera-listado/piedra-papel-tijera-listado.component';
+import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
 
 
 export const EXAMPLE_COMPONENTS = {
@@ -55,7 +60,12 @@ export const EXAMPLE_COMPONENTS = {
     MiJuegoComponent,
     ListadoComponent,
     AnagramaComponent,
-    ListadoDeResultadosComponent
+    ListadoDeResultadosComponent,
+    AdivinaMasListadoComponent,
+    AgilidadMasListadoComponent,
+    PiedraPapelTijeraComponent,
+    PiedraPapelTijeraListadoComponent,
+    AnagramaMasListadoComponent
     
   ],
   imports: [

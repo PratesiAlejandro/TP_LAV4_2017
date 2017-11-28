@@ -35,6 +35,7 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.nuevoJuego.numeroSecreto=0;
 
     }else{
+   
 
       let mensaje:string;
       switch (this.contador) {
@@ -46,6 +47,9 @@ export class AdivinaElNumeroComponent implements OnInit {
           break;
           case 3:
           mensaje="No es, Yo crei que la tercera era la vencida.";
+            this.enviarJuego.emit(this.nuevoJuego);
+            this.MostarMensaje("Perdiste !!!",true);
+            this.nuevoJuego.numeroSecreto=0;
           break;
           case 4:
           mensaje="No era el  "+this.nuevoJuego.numeroIngresado;

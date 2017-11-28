@@ -2,7 +2,7 @@
 <!--app-menu></app-menu-->
 <!-- index.html -->
 
-<body style="background-image: url('/TP_LAV4_2017/assets/imagenes/agilidad.jpg'); height: 100%;">
+ <body style="background-image: url('/TP_LAV4_2017/assets/imagenes/poker.jpg')">
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6">
@@ -19,49 +19,41 @@
   <label for="example-text-input" class="col-2 col-form-label">Primer Numero</label>
   <div class="col-10">
   
-    <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:100%" readonly/>
+    <input [(ngModel)]="unJuego.numero1" placeholder="ingrese numero" name="num1" type="text" class="form-control" style="width:100%" readonly/>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-search-input" class="col-2 col-form-label">Operador</label>
   <div class="col-10">
-    <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:100%" readonly/>
+    <input [(ngModel)]="unJuego.operadorCaracter" placeholder="Operador" name="signo" type="text" class="form-control" style="width:100%" readonly/>
   </div>
 </div>
 <div class="form-group row">
   <label for="example-email-input" class="col-2 col-form-label">Segundo Numero</label>
   <div class="col-10">
-    <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:100%" readonly/>
+    <input [(ngModel)]="unJuego.numero2" placeholder="ingrese numero" name="num2" type="text" class="form-control" style="width:100%" readonly/>
   </div>
 </div>
 
 <div class="form-group row">
   <label for="example-email-input" class="col-2 col-form-label">Respuesta</label>
   <div class="col-10">
-   <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:100%"/>
+   <input [(ngModel)]="unJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:100%"/>
   </div>
 </div>
 
 <div class="form-group row">
  
   <div class="col-12">
-     <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg btn-block">Verificar {{Tiempo}} </button></h2>
+     <!-- <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg btn-block">Verificar {{Tiempo}} </button></h2> -->
+  <h2><button (click)="unJuego.Siguiente()" value="SIGUIENTE" name="siguiente" class="btn btn-success btn-lg btn-block">Siguiente </button></h2>
   </div>
 </div>
+<h4>Intento Numero: {{unJuego.ronda}}</h4>
 
-<div class="form-group row">
- 
+<div class="form-group row" *ngIf="unJuego.contador==3">
   <div class="col-12">
-   <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg btn-block">Nuevo</button></h2>
-  </div>
-</div>
-<div class="form-group row">
-  <div class="col-12">
-    <ul class="list-group">
-<li> <h3><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h3> </li>
-  <li class="list-group-item list-group-item-success" [hidden]="!nuevoJuego.gano">Usted adivino el número</li>
-  <li class="list-group-item list-group-item-danger" [hidden]="nuevoJuego.gano">Usted aún no gano </li>
-</ul>
+ <input type="button" class="btn btn-danger btn-lg btn-block" value="Resultados" name="verificar" (click)="verificar()">
    
   </div>
 </div>

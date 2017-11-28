@@ -16,7 +16,7 @@ export class ListadoComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+  /*
  llamaService(){
     console.log("llamaService");
     this.listadoParaCompartir= this.miServicioJuego.listar();
@@ -28,4 +28,5 @@ export class ListadoComponent implements OnInit {
         this.listadoParaCompartir = listado;
     });
   }
+*/
 }

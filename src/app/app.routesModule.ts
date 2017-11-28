@@ -11,6 +11,12 @@ import { AdivinaElNumeroComponent } from '../app/componentes/adivina-el-numero/a
 import { MiJuegoComponent } from './componentes/mi-juego/mi-juego.component';
 import { ListadoComponent } from './componentes/listado/listado.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/adivina-mas-listado.component';
+import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { PiedraPapelTijeraListadoComponent } from './componentes/piedra-papel-tijera-listado/piedra-papel-tijera-listado.component';
+import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
+
 import { PaginaNoEncontradaComponent } from '../app/componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 
 const APP_ROUTES: Routes = [ 
@@ -23,11 +29,13 @@ const APP_ROUTES: Routes = [
     {path: '404' ,component: PaginaNoEncontradaComponent },
     {path: 'Juegos' ,component: JuegosComponent ,
       children:
-         [ {path: 'Adivina' , component: AdivinaElNumeroComponent}, 
+         [ {path: 'AdivinaListado' , component: AdivinaMasListadoComponent}, 
            {path: 'Listado' , component: ListadoComponent },
+            {path: 'PPTListado' , component: PiedraPapelTijeraListadoComponent },
            {path: 'Mijuego' , component: MiJuegoComponent },
-             {path: 'Anagrama' , component: AnagramaComponent },
-           {path: 'Agilidad' , component: AgilidadAritmeticaComponent }]
+            {path: 'PPT' , component: PiedraPapelTijeraComponent },
+             {path: 'Anagrama' , component: AnagramaMasListadoComponent },
+           {path: 'AgilidadListado' , component: AgilidadMasListadoComponent }]
           
      },
 
