@@ -27,7 +27,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   usuario: string;
 
   constructor(private miServicio?: JuegoServiceService) {
-    this.unJuego = new JuegoAgilidad("Agilidad", "Cyn", true);
+    this.unJuego = new JuegoAgilidad("Agilidad", "Anonimo", true);
   }
 
   ngOnInit() {

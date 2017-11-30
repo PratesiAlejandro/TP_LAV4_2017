@@ -13,21 +13,21 @@ export class JuegoAnagrama extends Juego {
     }
 
     arrayDePalabras : Array <any >= [
-        { ordenada:"Gato",desordenada:"toga" },
-        { ordenada:"Halcon",desordenada:"loncha" },
-        { ordenada:"Jirafa",desordenada:"fijara" },
-        { ordenada:"Leon",desordenada:"loen" },
-        { ordenada:"Luciernaga",desordenada:"neuralgica" },
-        { ordenada:"Gorila",desordenada:"gloria" },
-        { ordenada:"Tiburon",desordenada:"tribuno" },
-        { ordenada:"Cebra",desordenada:"cebar" },
-        { ordenada:"Lobo",desordenada:"bolo" },
-        { ordenada:"Tigre",desordenada:"grite" },
-        { ordenada:"Vaca",desordenada:"cava" },
-        { ordenada:"Zorra",desordenada:"rozar" },
-        { ordenada:"Pantera",desordenada:"atrapen" },
-        { ordenada:"Mariposa",desordenada:"piaramos" },
-        { ordenada:"Medusa",desordenada:"mudase" }
+        { ordenada:"gato",desordenada:"toga" },
+        { ordenada:"halcon",desordenada:"loncha" },
+        { ordenada:"jirafa",desordenada:"fijara" },
+        { ordenada:"leon",desordenada:"loen" },
+        { ordenada:"luciernaga",desordenada:"neuralgica" },
+        { ordenada:"gorila",desordenada:"gloria" },
+        { ordenada:"tiburon",desordenada:"tribuno" },
+        { ordenada:"cebra",desordenada:"cebar" },
+        { ordenada:"lobo",desordenada:"bolo" },
+        { ordenada:"tigre",desordenada:"grite" },
+        { ordenada:"vaca",desordenada:"cava" },
+        { ordenada:"zorra",desordenada:"rozar" },
+        { ordenada:"pantera",desordenada:"atrapen" },
+        { ordenada:"mariposa",desordenada:"piaramos" },
+        { ordenada:"medusa",desordenada:"mudase" }
 
     ];
 

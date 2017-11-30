@@ -1,3 +1,5 @@
+import { Juego } from '../clases/juego';
+
 export class JuegoAgilidad {
     nombre: string;
     numero1: number = 0;

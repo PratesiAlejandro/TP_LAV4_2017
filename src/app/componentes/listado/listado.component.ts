@@ -10,13 +10,12 @@ import { JuegoServiceService } from '../../servicios/juego-service.service';
 export class ListadoComponent implements OnInit {
 
  public listadoParaCompartir: Array<any>;
+
+ /*
    miServicioJuego:JuegoServiceService
 
   constructor(servicioJuego:JuegoServiceService) {  this.miServicioJuego = servicioJuego; }
 
-  ngOnInit() {
-  }
-  /*
  llamaService(){
     console.log("llamaService");
     this.listadoParaCompartir= this.miServicioJuego.listar();
@@ -29,4 +28,15 @@ export class ListadoComponent implements OnInit {
     });
   }
 */
+ unString: string;
+  data: any;
+
+  constructor(public servicioJuego: JuegoServiceService) {
+
+  }
+
+  ngOnInit() {
+    this.listadoParaCompartir = this.servicioJuego.inicializarLista();
+
+  }
 }
