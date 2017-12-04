@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Juego } from '../../clases/juego';
-import { JuegoAnagrama } from '../../clases/juego-anagrama';
+
 import { JuegoServiceService } from '../../servicios/juego-service.service';
 
 @Component({
@@ -24,6 +24,7 @@ export class AnagramaMasListadoComponent implements OnInit {
   tomarJuegoTerminado(juego: Juego) {
     this.listadoParaCompartir.push(juego);
     this.servicioJuego.cargarLista(this.listadoParaCompartir);
+
   }
 
 }

@@ -1,58 +1,93 @@
-import  { Juego } from '../clases/juego';
+export class JuegoAnagrama {
+ palabrasDesordenadas: Array<string> = new Array<string>();
+    palabrasOrdenadas: Array<string> = new Array<string>();
+    palabraAJugar: string;
+    palabraDeUsuario: string = '';
+    gano: boolean;
+    contador: number = 0;
+    numeroRandom: number = 0;
+    nombre: string = '';
+    jugador: string = '';
+    resultado: string = '';
 
-export class JuegoAnagrama extends Juego {
 
- respuestaIngresada : string;
-    respuesta : string;
-    palabraOrdenada="";
-    palabraDesordenada="";
-    palabraIngresada="";
-
-    constructor(nombre?: string, gano?: boolean,jugador?:string){
-        super(" Anagrama ",gano,jugador);
+    constructor(unNombre?: string, jugador?: string, gano?: boolean) {
+        this.nombre = unNombre;
+        this.jugador = jugador;
+        this.gano = gano;
     }
 
-    arrayDePalabras : Array <any >= [
-        { ordenada:"gato",desordenada:"toga" },
-        { ordenada:"halcon",desordenada:"loncha" },
-        { ordenada:"jirafa",desordenada:"fijara" },
-        { ordenada:"leon",desordenada:"loen" },
-        { ordenada:"luciernaga",desordenada:"neuralgica" },
-        { ordenada:"gorila",desordenada:"gloria" },
-        { ordenada:"tiburon",desordenada:"tribuno" },
-        { ordenada:"cebra",desordenada:"cebar" },
-        { ordenada:"lobo",desordenada:"bolo" },
-        { ordenada:"tigre",desordenada:"grite" },
-        { ordenada:"vaca",desordenada:"cava" },
-        { ordenada:"zorra",desordenada:"rozar" },
-        { ordenada:"pantera",desordenada:"atrapen" },
-        { ordenada:"mariposa",desordenada:"piaramos" },
-        { ordenada:"medusa",desordenada:"mudase" }
 
-    ];
+    Comenzar() {
+        this.palabrasOrdenadas = [
+            "GATO",
+            "HALCON",
+            "JIRAFA",
+            "LEON",
+            "LUCIERNAGA",
+            "GORILA",
+            "TIBURON",
+            "CEBRA",
+            "LOBO",
+            "TIGRE",
+            "VACA",
+            "ZORRA",
+            "PANTERA"];
 
-    public asignarPalabra() {       
-        let indice;
-        indice =Math.floor(Math.random() * this.arrayDePalabras.length);
-        console.log(this.arrayDePalabras[indice]["ordenada"]);
-        this.palabraDesordenada=this.arrayDePalabras[indice]["desordenada"];
-        this.palabraOrdenada=this.arrayDePalabras[indice]["ordenada"];
+        this.palabrasDesordenadas = [
+            "TOGA",
+            "LONCHA",
+            "FIJARA",
+            "LOEN",
+            "NEURALGICA",
+            "GLORIA",
+            "TRIBUNO",
+            "CEBAR",
+            "BOLO",
+            "GRITE",
+            "CAVA",
+            "ROZAR",
+            "ATRAPEN"];
+        this.Next();
     }
 
-    public verificar() {
-        if (this.palabraIngresada == this.palabraOrdenada ) 
-        {
-          this.gano = true;
-          this.palabraOrdenada="";
-          this.palabraDesordenada="";
-          this.palabraIngresada=""; 
+    Next() {
+        this.numeroRandom = Math.floor((Math.random() * 12) + 0);
+        this.palabraAJugar = this.palabrasDesordenadas[this.numeroRandom];
+
+    }
+
+    Verificar(unaPalabra: string) {
+        if (unaPalabra != '' && unaPalabra != null) {
+
+            unaPalabra = unaPalabra.toUpperCase();
+            console.log(unaPalabra);
+            console.log(this.palabrasOrdenadas[this.numeroRandom])
+
+            if (unaPalabra === this.palabrasOrdenadas[this.numeroRandom]) {
+                this.gano = true;
+                this.resultado = "GANO!"
+                this.contador = 0;
+                console.log(this);
+            }
+            else {
+                this.contador++;
+            }
+
+            if (this.contador == 3) {
+                this.gano = false;
+                this.resultado = "PERDIO!"
+                this.Next();
+            }
         }
-        if (this.gano) {
-          return true;
-        } else {
-          return false;
-        }
     }
+
+    Rendirse() {
+        this.gano = false;
+        this.resultado = "PERDIO!"
+        this.Next();
+    }
+
+
 
 }
-

@@ -14,6 +14,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 export class AgilidadAritmeticaComponent implements OnInit {
   /*@Output() 
  enviarJuego :EventEmitter<any>= new EventEmitter<any>();*/
+ 
   unJuego: JuegoAgilidad;
 
   //ocultarVerificar: boolean;
@@ -26,7 +27,8 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
   usuario: string;
 
-  constructor(private miServicio?: JuegoServiceService) {
+  constructor(private miServicio?: JuegoServiceService)
+  {
     this.unJuego = new JuegoAgilidad("Agilidad", "Anonimo", true);
   }
 

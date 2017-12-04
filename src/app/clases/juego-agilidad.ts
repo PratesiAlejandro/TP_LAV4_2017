@@ -16,7 +16,7 @@ export class JuegoAgilidad {
     ronda: number = 0;
 
     constructor(unNombre: string, jugador: string, gano: boolean) {
-        this.nombre = unNombre;
+        this.nombre = "Agilidad";
         this.jugador = jugador;
         this.gano = gano;
     }

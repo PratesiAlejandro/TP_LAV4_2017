@@ -2,7 +2,6 @@ import { Juego } from '../clases/juego';
 
 export class PiedraPapelTijera {
 
-
     nombre: string;
     jugador: string;
     gano: boolean;

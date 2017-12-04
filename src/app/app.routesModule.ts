@@ -16,7 +16,7 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { PiedraPapelTijeraListadoComponent } from './componentes/piedra-papel-tijera-listado/piedra-papel-tijera-listado.component';
 import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
-
+import { HomeJuegosComponent } from './componentes/home-juegos/home-juegos.component';
 import { PaginaNoEncontradaComponent } from '../app/componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 
 const APP_ROUTES: Routes = [ 
@@ -39,7 +39,7 @@ const APP_ROUTES: Routes = [
           
      },
 
-    { path: '',   redirectTo: '/Home', pathMatch: 'full' },
+    { path: '',   redirectTo: '/Login', pathMatch: 'full' },
     { path: '**', component: PaginaNoEncontradaComponent }
 
 ];

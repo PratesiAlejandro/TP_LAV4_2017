@@ -30,6 +30,7 @@ import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { PiedraPapelTijeraListadoComponent } from './componentes/piedra-papel-tijera-listado/piedra-papel-tijera-listado.component';
 import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
+import { HomeJuegosComponent } from './componentes/home-juegos/home-juegos.component';
 
 
 export const EXAMPLE_COMPONENTS = {
@@ -65,7 +66,8 @@ export const EXAMPLE_COMPONENTS = {
     AgilidadMasListadoComponent,
     PiedraPapelTijeraComponent,
     PiedraPapelTijeraListadoComponent,
-    AnagramaMasListadoComponent
+    AnagramaMasListadoComponent,
+    HomeJuegosComponent
     
   ],
   imports: [

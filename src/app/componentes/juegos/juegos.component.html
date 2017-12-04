@@ -42,24 +42,79 @@
        <a class="nav-link">|</a>
       </li>
        <li class="nav-item" [routerLink]="['PPTListado']">
-        <button type="button" class="btn btn-default">Piedra-Papel-Tijera</button>
+      <button type="button" class="btn btn-default">Piedra-Papel-Tijera</button>
       </li>
       <li class="nav-item">
-       <a class="nav-link">|</a>
+        <a class="nav-link">|</a>
       </li>
-       <li class="nav-item" [routerLink]="['Listado']">
-        <button type="button" class="btn btn-warning">Listado</button>
-      </li>
-       <li class="nav-item">
-       <a class="nav-link">|</a>
-      </li>
-       <li class="nav-item" [routerLink]="['Mijuego']">
-       <!-- <a class="nav-link" >Mi Juego</a> -->
+      <li class="nav-item" [routerLink]="['Mijuego']">
+        <!-- <a class="nav-link" >Mi Juego</a> -->
         <button type="button" class="btn btn-danger">Mi Juego</button>
       </li>
-    </ul>
-  </div>
+      <li class="nav-item">
+        <a class="nav-link">|</a>
+      </li>
+      <li class="nav-item" [routerLink]="['Listado']">
+        <button type="button" class="btn btn-warning">Listado</button>
+      </li>
+      </ul>
+      </div>
 </nav>
+
+<div class="card-group card-inverse card-primary text-center">
+  <div class="card"  [routerLink]="['AdivinaListado']" style="background-color:darkorange   ;border-color:white; cursor:pointer; width: 50%">
+    <img class="card-img-top" src="/TP_LAV4_2017/assets/imagenes/adivina.gif" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Adivina el Numero</h4>
+     
+     <button type="button" class="btn btn-dark btn-lg btn-block">Entrar</button>
+    </div>
+  </div>
+  <div class="card" [routerLink]="['AgilidadListado']" style="background-color: darkorange; border-color:white;">
+   
+     <img class="card-img-top" src="/TP_LAV4_2017/assets/imagenes/agilidad.gif" alt="Card image cap">
+    <div class="card-body">
+           <h4 class="card-title">Agilidad</h4>
+       <button type="button" class="btn btn-success btn-lg btn-block">Entrar</button>
+    </div>
+
+  </div>
+  <div class="card" [routerLink]="['Anagrama']" style="background-color:darkorange ; border-color: white;">
+  
+     <img class="card-img-top" src="/TP_LAV4_2017/assets/imagenes/anagrama.gif" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Anagrama</h4>
+      
+      <button type="button" class="btn btn-info btn-lg btn-block">Entrar</button>
+    </div>
+   
+  </div>
+    <div class="card" [routerLink]="['PPTListado']" style="background-color:darkorange ; border-color: white;">
+  
+     <img class="card-img-top" src="/TP_LAV4_2017/assets/imagenes/PPT.gif" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Piedra Papel Tijera</h4>
+    
+          <button type="button" class="btn btn-default btn-lg btn-block">Entrar</button>
+    </div>
+   
+  </div>
+    <div class="card" [routerLink]="['Mijuego']" style="background-color:darkorange ; border-color: white;">
+  
+     <img class="card-img-top" src="/TP_LAV4_2017/assets/imagenes/snake.gif" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Snake</h4>
+     
+      <button type="button" class="btn btn-danger btn-lg btn-block">Entrar</button>
+    </div>
+   
+  </div>
+</div>
+
+
+
+
+
 <!--
 <div class="container">
               
