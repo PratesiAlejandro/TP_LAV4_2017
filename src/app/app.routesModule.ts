@@ -18,6 +18,8 @@ import { PiedraPapelTijeraListadoComponent } from './componentes/piedra-papel-ti
 import { AnagramaMasListadoComponent } from './componentes/anagrama-mas-listado/anagrama-mas-listado.component';
 import { HomeJuegosComponent } from './componentes/home-juegos/home-juegos.component';
 import { PaginaNoEncontradaComponent } from '../app/componentes/pagina-no-encontrada/pagina-no-encontrada.component';
+import { MiJuegoListadoComponent } from './componentes/mi-juego-listado/mi-juego-listado.component';
+
 
 const APP_ROUTES: Routes = [ 
     {path: 'Login' ,component:LoginComponent },
@@ -32,7 +34,7 @@ const APP_ROUTES: Routes = [
          [ {path: 'AdivinaListado' , component: AdivinaMasListadoComponent}, 
            {path: 'Listado' , component: ListadoComponent },
             {path: 'PPTListado' , component: PiedraPapelTijeraListadoComponent },
-           {path: 'Mijuego' , component: MiJuegoComponent },
+           {path: 'Mijuego' , component: MiJuegoListadoComponent },
             {path: 'PPT' , component: PiedraPapelTijeraComponent },
              {path: 'Anagrama' , component: AnagramaMasListadoComponent },
            {path: 'AgilidadListado' , component: AgilidadMasListadoComponent }]

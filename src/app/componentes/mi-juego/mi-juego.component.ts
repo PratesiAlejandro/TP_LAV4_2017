@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
 import { BestScoreManager } from 'app/app.storage.service';
 import { CONTROLS, COLORS, BOARD_SIZE, GAME_MODES } from 'app/app.constants';
+
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { Snake } from '../../clases/snake';
+import { JuegoServiceService } from '../../servicios/juego-service.service';
+
 
 @Component({
   selector: 'app-mi-juego',
@@ -10,7 +14,13 @@ import { CONTROLS, COLORS, BOARD_SIZE, GAME_MODES } from 'app/app.constants';
     '(document:keydown)': 'handleKeyboardEvents($event)'
   }
 })
+
 export class MiJuegoComponent implements OnInit {
+
+    juegoSnake: Snake;
+
+      @Output()
+      enviarJuego:EventEmitter<any>= new EventEmitter<any>();
 
   ngOnInit() {
   }
@@ -45,11 +55,12 @@ export class MiJuegoComponent implements OnInit {
     y: -1
   };
 
-  constructor(
-    private bestScoreService: BestScoreManager
-  ) {
-    this.setBoard();
-  }
+  constructor(private bestScoreService: BestScoreManager,private miServicio?: JuegoServiceService)
+ {
+ this.setBoard();
+ this.juegoSnake = new Snake("Snake", "Anonimo", true);
+    
+ }
 
   handleKeyboardEvents(e: KeyboardEvent) {
     if (e.keyCode === CONTROLS.LEFT && this.snake.direction !== CONTROLS.RIGHT) {
@@ -221,7 +232,17 @@ export class MiJuegoComponent implements OnInit {
       this.bestScoreService.store(this.score);
       this.best_score = this.score;
       this.newBestScore = true;
-    }
+     this.verificar;
+      this.juegoSnake = new Snake("Snake", "Anonimo", true);
+        this.juegoSnake.jugador = this.miServicio.retornarUsuario();
+      this.enviarJuego.emit(this.juegoSnake);
+    }else{
+
+     this.verificar;
+      this.juegoSnake = new Snake("Snake", "Anonimo", false);
+       this.juegoSnake.jugador = this.miServicio.retornarUsuario();
+     this.enviarJuego.emit(this.juegoSnake);
+      }
 
     setTimeout(() => {
       me.isGameOver = false;
@@ -278,5 +299,14 @@ export class MiJuegoComponent implements OnInit {
     this.resetFruit();
     this.updatePositions();
   }
+
+
+    verificar() {
+    //this.juegoSnake.Verificar();
+    this.juegoSnake.jugador = this.miServicio.retornarUsuario();
+    this.enviarJuego.emit(this.juegoSnake);
+  }
+
+
 }
 

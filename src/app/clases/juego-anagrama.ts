@@ -1,4 +1,5 @@
 export class JuegoAnagrama {
+    
  palabrasDesordenadas: Array<string> = new Array<string>();
     palabrasOrdenadas: Array<string> = new Array<string>();
     palabraAJugar: string;
